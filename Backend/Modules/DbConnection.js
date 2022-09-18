@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-require('../Config/.env');
+
 
 
  require("dotenv").config();
 
-const uri = 'mongodb+srv://Upgrade:Upgrade123123@eshop.fsw6pis.mongodb.net/Eshop?retryWrites=true&w=majority';
+const uri = process.env.URI;
 
 
 const connection = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true})
