@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const products = require("./Routes/ProductRoute");
 const signup = require("./Routes/SignupRoute");
 const address = require("./Routes/AddressRoute");
+const orders = require("./Routes/OrdersRoutes");
 
 
 const app = express();
@@ -21,7 +22,7 @@ app.use(cors());
 app.use(products);
 app.use(signup);
 app.use(address);
-
+app.use(orders);
 
 
 app.get('/', (req , res)=>{
