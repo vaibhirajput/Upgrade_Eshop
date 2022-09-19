@@ -1,18 +1,19 @@
 const products = require("express").Router();
+const Auth = require("../Authentication/Auth");
 const {AddProductFun, EditedProductFun, DeleteProductFun, AllProductFun, productFunById, ProductFunByCategories } = require("../Controller/ProductController");
 
 
 
 
 // post add new product route
-products.post('/products', AddProductFun);
+products.post('/products', Auth, AddProductFun);
 
 // put edited the product route
-products.put('/products', EditedProductFun);
+products.put('/products',Auth, EditedProductFun);
 
 
 // delete the product route
-products.delete('/products', DeleteProductFun);
+products.delete('/products',Auth, DeleteProductFun);
 
 
 // get all product route

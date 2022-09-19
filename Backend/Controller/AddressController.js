@@ -5,11 +5,11 @@ const users = require("../Modules/Registeration");
 
 // Post address api
 const addressfun = async(req, res)=>{
-    const { name,street,contactNumber,landmark,city,state,zipcode, userid} = req.body;
+    const { name,street,contactNumber,landmark,city,state,zipcode, id} = req.body;
   
        try {
          if(name && street && contactNumber && strelandmarket && city && state && zipcode ){
-            const vailduser = await users.findOne({userid}) 
+            const vailduser = await users.findOne({id}) 
 
 
             await Address.create({
@@ -21,7 +21,7 @@ const addressfun = async(req, res)=>{
                 state,
                 zipcode,
                 user:{
-                    userid:vailduser._id ,
+                    userid:id ,
                     firstName:vailduser.firstName,
                     lastName:vailduser.lastName,
                     email:vailduser.email,
