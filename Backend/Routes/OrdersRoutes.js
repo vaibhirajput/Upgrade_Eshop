@@ -3,7 +3,7 @@ const {ordersfun} = require("../Controller/OrdersController");
 
 
 // all client orders  routes
-orders.post('/users', ordersfun);
+orders.post('/users/order', ordersfun);
 
 
 module.exports = orders;

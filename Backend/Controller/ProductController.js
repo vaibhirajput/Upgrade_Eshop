@@ -23,11 +23,11 @@ const AddProductFun = async(req, res)=>{
            
         })
    
-        res.json({massge:"ok vaild"})
+        res.json({massge:"Product is Add Successfully"})
    
    
       }else{
-         res.json({massge:"not vaild"})
+         res.json({massge:"Product is Not Add "})
 
       }
 
@@ -66,11 +66,11 @@ const EditedProductFun = async(req, res)=>{
 
         await Products.findByIdAndUpdate({_id:id}, {newproduct}, {new:true});
    
-        res.json({massge:"ok update"})
+        res.json({massge:"Product update Successfully "})
    
    
       }else{
-         res.json({massge:"not update"})
+         res.json({massge:"Product is not update"})
 
       }
 
@@ -130,9 +130,9 @@ const AllProductFun = async(req, res)=>{
 
 
 
-// get categerio ways products api
+// get categerio ways products api(only gives product by categories)
 const ProductFunByCategories = async(req, res)=>{
-   const {category} = res.body;
+   const {category} = req.body;
 
    try {
       if(category){
@@ -155,10 +155,10 @@ const ProductFunByCategories = async(req, res)=>{
 
  // get products by id api
 const productFunById = async(req, res)=>{
-   const {productid} = res.body;
+   const {productid} = req.body;
 
    try {
-      if(category){
+      if(productid){
          const databyproductid = await Products.findById({_id:productid});
          res.json({data:databyproductid})
 

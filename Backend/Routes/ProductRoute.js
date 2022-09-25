@@ -6,23 +6,23 @@ const {AddProductFun, EditedProductFun, DeleteProductFun, AllProductFun, product
 
 
 // post add new product route
-products.post('/products', Auth, AddProductFun);
+products.post('/addproducts', Auth, AddProductFun);
 
 // put edited the product route
-products.put('/products',Auth, EditedProductFun);
+products.put('/editproduct',Auth, EditedProductFun);
 
 
 // delete the product route
-products.delete('/products',Auth, DeleteProductFun);
+products.delete('/deleteproducts',Auth, DeleteProductFun);
 
 
 // get all product route
 products.get('/products', AllProductFun);
 
-// get lower product route
-products.get('/products/categories', ProductFunByCategories);
+// get categories product route
+products.post('/products/categories', ProductFunByCategories);
 
-// get lower product route
-products.get('/products/id',productFunById);
+// get id product route
+products.post('/products/id',productFunById);
 
 module.exports = products; 
