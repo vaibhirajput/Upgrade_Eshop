@@ -122,7 +122,7 @@ function Product() {
 
                       <h3>RS {data.price}/-</h3>
                       <div className="editdiv">
-                        <button className='btnbuyhome'>BUY</button>
+                        <Link to={`/productdetail/${data._id}`}> <button className='btnbuyhome'>BUY</button></Link>
                         <div ref={editanddelete} >
                           <Link to={`/editproduct/${data._id}`}> <img src={edit} alt="" /> </Link>
                           <img src={delet} alt="" onClick={() => deletefun()} />
