@@ -89,7 +89,7 @@ const EditedProductFun = async(req, res)=>{
 // delete the product api
 const DeleteProductFun = async(req, res)=>{
    
-   const id = res.productid;
+   const id = req.productid;
 
    try {
       if(id){

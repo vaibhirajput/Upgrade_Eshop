@@ -93,11 +93,12 @@ function Home() {
       {
          allProductData.map((data)=>{
 
-         return(
+         return( <>
+         
           <div className="productcartdiv">
 
             <div className="productimg">
-              <Link to="/productdetail/productid"> <img src={data.img} alt="" /></Link>
+              <Link to="/productdetail/productid"> <img src={data.image} alt="" /></Link>
 
             </div>
 
@@ -120,7 +121,7 @@ function Home() {
 
 
           </div>
-   ) }) }
+          </>) }) }
         </div>
 
       </div>
